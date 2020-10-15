@@ -4,7 +4,7 @@ from django.db.utils import IntegrityError
 
 from api import permissions
 from api import serializers
-from api.exceptions import BadRequest
+from api.exceptions import MultipleOrphanageError, NoUserProvidedError
 from core.models import Orphanage
 
 
@@ -18,7 +18,9 @@ class ManageOrphanage(viewsets.ModelViewSet):
         try:
             serializer.save(user=self.request.user)
         except IntegrityError:
-            raise BadRequest
+            raise MultipleOrphanageError
+        except ValueError:
+            raise NoUserProvidedError
 
 
 

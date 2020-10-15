@@ -18,8 +18,6 @@ const mapIcon = Leaflet.icon({
 })
 
 const Orphs: React.FC = () => {
-
-    console.log(process.env.REACT_APP_MAPBOX_TOKEN)
   return (
     <div id="page-orphs">
         <aside>

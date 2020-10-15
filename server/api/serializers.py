@@ -23,7 +23,7 @@ class OrphSerializer(serializers.ModelSerializer):
         model = models.Orphanage
         fields = ('id', 'user', 'state', 'city', 'name', 'about', 'instructions',
                   'open', 'close', 'lat', 'lon', 'open_on_weekends')
-        extra_kwargs = {'user': {'read_only': True}}
+        extra_kwargs = {'user': {'read_only': True}}  # Set user field read_only
 
 
 class ImageSerializer(serializers.ModelSerializer):
