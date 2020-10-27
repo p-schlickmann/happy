@@ -1,3 +1,2 @@
-# (not ready)
-# happy
-Mobile application
+# Happy REST API
+
